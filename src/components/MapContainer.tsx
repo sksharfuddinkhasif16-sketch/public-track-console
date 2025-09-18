@@ -48,7 +48,7 @@ const MapContainer = () => {
             </div>
 
             {/* Search Button */}
-            <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
+            <Button className="w-full bg-accent-theme hover:bg-accent-theme-hover text-accent-theme-foreground">
               <Search className="h-4 w-4 mr-2" />
               Find Route
             </Button>

@@ -6,13 +6,13 @@ const SummaryPanel = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-4 mb-6">
       {/* Active Buses */}
-      <Card className="dashboard-shadow border-card-border">
-        <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-          <CardTitle className="text-sm font-medium text-muted-foreground">
-            Active Buses
-          </CardTitle>
-          <Activity className="h-4 w-4 text-primary" />
-        </CardHeader>
+        <Card className="dashboard-shadow border-card-border">
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 bg-accent-theme/5">
+            <CardTitle className="text-sm font-medium text-muted-foreground">
+              Active Buses
+            </CardTitle>
+            <Activity className="h-4 w-4 text-accent-theme" />
+          </CardHeader>
         <CardContent>
           <div className="text-2xl font-bold text-foreground">24</div>
           <div className="text-xs text-success flex items-center mt-1">
@@ -23,13 +23,13 @@ const SummaryPanel = () => {
       </Card>
 
       {/* On-Time Performance */}
-      <Card className="dashboard-shadow border-card-border">
-        <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-          <CardTitle className="text-sm font-medium text-muted-foreground">
-            On-Time Rate
-          </CardTitle>
-          <Clock className="h-4 w-4 text-primary" />
-        </CardHeader>
+        <Card className="dashboard-shadow border-card-border">
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 bg-accent-theme/5">
+            <CardTitle className="text-sm font-medium text-muted-foreground">
+              On-Time Rate
+            </CardTitle>
+            <Clock className="h-4 w-4 text-accent-theme" />
+          </CardHeader>
         <CardContent>
           <div className="text-2xl font-bold text-foreground">87%</div>
           <div className="flex items-center space-x-1 mt-1">

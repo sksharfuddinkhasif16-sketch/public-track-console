@@ -27,6 +27,12 @@ All colors MUST be HSL.
     --primary-foreground: 0 0% 100%;
     --primary-muted: 213 32% 95%;
 
+    /* Accent theme color #004963 */
+    --accent-theme: 195 100% 19%;
+    --accent-theme-foreground: 0 0% 100%;
+    --accent-theme-muted: 195 100% 95%;
+    --accent-theme-hover: 195 100% 25%;
+
     /* Secondary - Subtle gray */
     --secondary: 210 11% 96%;
     --secondary-foreground: 215 25% 27%;
@@ -102,6 +108,12 @@ All colors MUST be HSL.
     --primary: 213 94% 68%;
     --primary-foreground: 215 28% 17%;
     --primary-muted: 213 32% 25%;
+
+    /* Accent theme color #004963 for dark mode */
+    --accent-theme: 195 100% 25%;
+    --accent-theme-foreground: 0 0% 100%;
+    --accent-theme-muted: 195 100% 15%;
+    --accent-theme-hover: 195 100% 30%;
 
     --secondary: 215 25% 32%;
     --secondary-foreground: 0 0% 98%;
