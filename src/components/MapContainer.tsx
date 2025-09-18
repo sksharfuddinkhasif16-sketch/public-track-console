@@ -1,70 +1,94 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { MapPin, Navigation, Clock } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { MapPin, Navigation, Search } from "lucide-react";
 
 const MapContainer = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-      {/* Selected Bus Info Panel */}
+      {/* Route Planning Panel */}
       <div className="lg:col-span-1">
         <Card className="dashboard-shadow border-card-border h-full">
           <CardHeader className="pb-3">
             <CardTitle className="text-lg font-semibold flex items-center">
-              <div className="w-3 h-3 bg-primary rounded-full mr-2 animate-pulse"></div>
-              Bus #402
+              <Search className="h-5 w-5 text-primary mr-2" />
+              Route Planner
             </CardTitle>
-            <Badge variant="secondary" className="w-fit bg-success/10 text-success border-success/20">
-              Route A - Downtown Express
-            </Badge>
           </CardHeader>
           <CardContent className="space-y-4">
-            {/* Current Status */}
-            <div className="space-y-3">
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-muted-foreground">Status</span>
-                <Badge className="bg-success/10 text-success border-success/20">
-                  On Time
-                </Badge>
-              </div>
-              
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-muted-foreground">Current Speed</span>
-                <span className="font-medium">28 km/h</span>
-              </div>
-
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-muted-foreground">Passengers</span>
-                <span className="font-medium">23/45</span>
+            {/* Departure Input */}
+            <div className="space-y-2">
+              <Label htmlFor="departure" className="text-sm font-medium text-foreground">
+                From
+              </Label>
+              <div className="relative">
+                <MapPin className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                <Input
+                  id="departure"
+                  placeholder="Enter departure location"
+                  className="pl-10 border-card-border focus:border-primary focus:ring-primary/20"
+                />
               </div>
             </div>
 
-            {/* Next Stop Info */}
-            <div className="border-t border-card-border pt-4">
-              <div className="flex items-start space-x-3">
-                <MapPin className="h-4 w-4 text-primary mt-0.5" />
-                <div>
-                  <p className="text-sm font-medium">Next Stop</p>
-                  <p className="text-xs text-muted-foreground">Central Station</p>
-                </div>
-              </div>
-              
-              <div className="flex items-center space-x-3 mt-3">
-                <Clock className="h-4 w-4 text-primary" />
-                <div>
-                  <p className="text-sm font-medium">ETA: 4 minutes</p>
-                  <p className="text-xs text-muted-foreground">Distance: 1.2 km</p>
-                </div>
+            {/* Destination Input */}
+            <div className="space-y-2">
+              <Label htmlFor="destination" className="text-sm font-medium text-foreground">
+                To
+              </Label>
+              <div className="relative">
+                <MapPin className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                <Input
+                  id="destination"
+                  placeholder="Enter destination"
+                  className="pl-10 border-card-border focus:border-primary focus:ring-primary/20"
+                />
               </div>
             </div>
 
-            {/* Route Progress */}
+            {/* Search Button */}
+            <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
+              <Search className="h-4 w-4 mr-2" />
+              Find Route
+            </Button>
+
+            {/* Quick Suggestions */}
             <div className="border-t border-card-border pt-4">
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-sm text-muted-foreground">Route Progress</span>
-                <span className="text-sm font-medium">65%</span>
-              </div>
-              <div className="w-full bg-muted rounded-full h-2">
-                <div className="bg-primary h-2 rounded-full transition-all duration-300" style={{ width: '65%' }}></div>
+              <p className="text-sm font-medium text-foreground mb-3">Popular Destinations</p>
+              <div className="space-y-2">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="w-full justify-start text-left text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                >
+                  <MapPin className="h-3 w-3 mr-2" />
+                  Central Station
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="w-full justify-start text-left text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                >
+                  <MapPin className="h-3 w-3 mr-2" />
+                  University Campus
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="w-full justify-start text-left text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                >
+                  <MapPin className="h-3 w-3 mr-2" />
+                  Shopping Mall
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="w-full justify-start text-left text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                >
+                  <MapPin className="h-3 w-3 mr-2" />
+                  Medical Center
+                </Button>
               </div>
             </div>
           </CardContent>
