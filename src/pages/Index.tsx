@@ -1,11 +1,29 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import TopNavigation from "@/components/TopNavigation";
+import Sidebar from "@/components/Sidebar";
+import SummaryPanel from "@/components/SummaryPanel";
+import MapContainer from "@/components/MapContainer";
+import BusTable from "@/components/BusTable";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-background">
+      <TopNavigation />
+      
+      <div className="flex min-h-[calc(100vh-4rem)]">
+        <Sidebar />
+        
+        <main className="flex-1 p-6 overflow-auto">
+          {/* Summary Cards */}
+          <SummaryPanel />
+          
+          {/* Map and Bus Info */}
+          <MapContainer />
+          
+          {/* Bus Fleet Table */}
+          <div className="mt-6">
+            <BusTable />
+          </div>
+        </main>
       </div>
     </div>
   );
